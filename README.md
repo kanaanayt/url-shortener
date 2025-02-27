@@ -116,6 +116,9 @@ The project was configured with standard development launch settings:
 
 This commit added a GitHub Actions workflow for continuous integration.
 
+- GitHub Actions link using .NET workflow
+- create api.yml inside .github/workflows
+
 ### GitHub Actions Workflow
 
 ```yaml
@@ -289,10 +292,13 @@ A README file was added with manual deployment commands:
 
 ```markdown
 ```bash
+az login
+
 az group create --name urlshortener-dev --location westeurope
 
 az deployment group create --resource-group urlshortener-dev --template-file infrastructure/main.bicep
 ```
+
 
 **Key Notes:**
 - Add two environment variables in GitHub Settings > Environments > Development
@@ -300,3 +306,25 @@ az deployment group create --resource-group urlshortener-dev --template-file inf
 - Now, Settings > Secrets and variables > Actions 
 - Copy Azure subscription ID and paste that in Repository variables
 - AZURE_SUBSCRIPTION_ID
+- Now create user for GH actions 
+
+### Azure Service Principal Setup
+To create a service principal for GitHub Actions authentication:
+
+```bash
+# Create service principal and assign contributor role
+az ad sp create-for-rbac \
+  --name "GitHub-Actions-SP" \
+  --role contributor \
+  --scopes /subscriptions/a90763b8-8b1f-4036-9a2c-a0e82401533f \
+  --sdk-auth
+
+```
+
+Add the following secrets to GitHub (Settings > Secrets and variables > Actions):
+- AZURE_CLIENT_ID: The `clientId` from the JSON output
+-   "clientId": "0be78530-a134-49fd-8a5d-8ec577ffb7e3",
+- AZURE_TENANT_ID: The `tenantId` from the JSON output
+-   "tenantId": "9da91107-1d07-4401-ae97-e8080254f177",
+- AZURE_SUBSCRIPTION_ID: Your Azure subscription ID
+- AZURE_CLIENT_SECRET: The `clientSecret` from the JSON output
