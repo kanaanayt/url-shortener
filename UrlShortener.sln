@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{B9B53491-4495-4EB9-B8B3-3FADFF5DB62A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DB6A406C-F1C1-4ACF-B50C-ADB424B0A488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Api", "Api\src\UrlShortener.Api\UrlShortener.Api.csproj", "{04B23BC1-9AE4-4F8B-9FBC-F36CCD6019C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{79BF4A1E-801B-4B6E-8FDE-BDB5078898CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Api.Core,Tests", "Api\tests\UrlShortener.Api.Core,Tests\UrlShortener.Api.Core,Tests.csproj", "{C1FEC98D-455B-4FD7-B983-E5383A8B69B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04B23BC1-9AE4-4F8B-9FBC-F36CCD6019C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B23BC1-9AE4-4F8B-9FBC-F36CCD6019C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B23BC1-9AE4-4F8B-9FBC-F36CCD6019C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B23BC1-9AE4-4F8B-9FBC-F36CCD6019C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1FEC98D-455B-4FD7-B983-E5383A8B69B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1FEC98D-455B-4FD7-B983-E5383A8B69B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1FEC98D-455B-4FD7-B983-E5383A8B69B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1FEC98D-455B-4FD7-B983-E5383A8B69B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DB6A406C-F1C1-4ACF-B50C-ADB424B0A488} = {B9B53491-4495-4EB9-B8B3-3FADFF5DB62A}
+		{04B23BC1-9AE4-4F8B-9FBC-F36CCD6019C5} = {DB6A406C-F1C1-4ACF-B50C-ADB424B0A488}
+		{79BF4A1E-801B-4B6E-8FDE-BDB5078898CA} = {B9B53491-4495-4EB9-B8B3-3FADFF5DB62A}
+		{C1FEC98D-455B-4FD7-B983-E5383A8B69B8} = {79BF4A1E-801B-4B6E-8FDE-BDB5078898CA}
+	EndGlobalSection
+EndGlobal
